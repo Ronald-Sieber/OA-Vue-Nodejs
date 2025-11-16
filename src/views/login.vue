@@ -118,7 +118,7 @@ const getCode = () => {
   getCodeImg().then(res => {
     captchaEnabled.value = res.captchaEnabled === undefined ? true : res.captchaEnabled
     if (captchaEnabled.value) {
-      codeUrl.value = "data:image/gif;base64," + res.img
+      codeUrl.value = "data:image/svg+xml;base64," + res.img
       formData.value.uuid = res.uuid
     }
   })

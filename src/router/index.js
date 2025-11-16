@@ -124,6 +124,21 @@ export const constantRoutes = [
     ],
   },
   {
+    path: '/docs',
+    component: Layout,
+    hidden: false,
+    redirect: 'noRedirect',
+    meta: { title: '文档管理', icon: 'documentation', noCache: false, link: null },
+    children: [
+      {
+        path: '',
+        name: 'Docs',
+        component: () => import('@/views/system/docs/index'),
+        meta: { title: '文档管理', icon: 'documentation', noCache: false, link: null },
+      },
+    ],
+  },
+  {
     path: '/notice',
     component: Layout,
     hidden: false,
