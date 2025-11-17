@@ -83,7 +83,7 @@ app.use(ElementPlus, {
 
 app.mount('#app')
 
-fetch('http://localhost:7001/api/health')
+fetch('/dev-api/api/health')
   .then(r => r.json())
   .then(d => console.log('health:', d))
   .catch(e => console.warn('health check failed:', e))

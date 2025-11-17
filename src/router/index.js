@@ -139,6 +139,21 @@ export const constantRoutes = [
     ],
   },
   {
+    path: '/process',
+    component: Layout,
+    hidden: false,
+    redirect: 'noRedirect',
+    meta: { title: '流程审批', icon: 'guide', noCache: false, link: null },
+    children: [
+      {
+        path: '',
+        name: 'Process',
+        component: () => import('@/views/system/process/index'),
+        meta: { title: '流程审批', icon: 'guide', noCache: false, link: null },
+      },
+    ],
+  },
+  {
     path: '/notice',
     component: Layout,
     hidden: false,

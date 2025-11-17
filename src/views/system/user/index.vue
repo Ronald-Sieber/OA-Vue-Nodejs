@@ -1,10 +1,8 @@
 <template>
   <div class="app-container">
     <el-row :gutter="20">
-      <splitpanes :horizontal="appStore.device === 'mobile'" class="default-theme">
-        <!--用户数据-->
-        <pane size="100">
-          <el-col>
+      <!--用户数据-->
+      <el-col :span="24">
             <el-form :model="queryParams" ref="queryRef" :inline="true" v-show="showSearch" label-width="68px">
               <el-form-item label="用户名称" prop="userName">
                 <el-input v-model="queryParams.userName" placeholder="请输入用户名称" clearable style="width: 240px"
@@ -116,9 +114,7 @@
                 </div>
               </template>
             </el-dialog>
-          </el-col>
-        </pane>
-      </splitpanes>
+      </el-col>
     </el-row>
 
     <!-- 添加或修改用户配置对话框 -->
@@ -224,8 +220,7 @@ import { getToken } from "@/utils/auth"
 import useAppStore from '@/store/modules/app'
 import { changeUserStatus, listUser, resetUserPwd, delUser, getUser, updateUser, addUser, deptTreeSelect, getAuthRole, updateAuthRole } from "@/api/system/user"
 import request from '@/utils/request'
-import { Splitpanes, Pane } from "splitpanes"
-import "splitpanes/dist/splitpanes.css"
+ 
 
 const router = useRouter()
 const appStore = useAppStore()
